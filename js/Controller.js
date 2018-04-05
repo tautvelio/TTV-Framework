@@ -2,7 +2,6 @@ function Controller(model) {
   var controller = this;
   this.model = model;
 
-
   //Eventlistener
   this.handleEvent = function(e) {
     e.stopPropagation();
@@ -23,30 +22,13 @@ function Controller(model) {
   this.getModelHeading = function() {
     console.log("from getmodel: " + controller.model.inputtext + " heading " + controller.model.heading);
     controller.model.heading = controller.model.inputtext;
-    return controller.model.inputtext;
+    return controller.model.heading;
   }
 
   this.keyupHandler = function(target) {
     controller.model.inputtext = target.value;
     controller.view.heading.innerHTML = controller.getModelHeading();
   }
-  
-///////////////////////////////////////////////////////////////////////////////
-  this.getModelHead = function() {
-    return controller.model.heading;
-  }
 
-
-  //Change the Model
-  this.clickHandler = function(target) {
-    if (controller.model.heading === 'World') {
-      controller.model.heading = 'Hello';
-      console.log('Model updated to Hello in Controller');
-    } else {
-      controller.model.heading = 'World';
-      console.log('Model updated to World in Controller');
-    }
-    target.innerText = controller.getModelHead();
-  }
   console.log('Controller');
 }
