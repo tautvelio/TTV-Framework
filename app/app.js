@@ -1,8 +1,8 @@
 (function() {
   function init() {
     var router = new Router([
-      new Route('home', 'Home.html'),
-      new Route('about', 'About.html')
+      new Route('home', 'home.html'),
+      new Route('about', 'about.html')
     ]);
   }
   init();
